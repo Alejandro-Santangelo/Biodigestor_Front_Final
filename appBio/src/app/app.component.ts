@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { NadvarComponent } from './shared/nadvar/nadvar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomePageComponent } from './shared/home-page/home-page.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AceptarTerminosComponent } from "./aceptar-terminos/aceptar-terminos.component";
@@ -23,7 +23,7 @@ import { FacturaComponent } from './factura/factura.component';
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        NadvarComponent,
+        NavbarComponent,
         HomePageComponent,
         FooterComponent,
         LoginComponent,
