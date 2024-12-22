@@ -39,18 +39,20 @@ button.btn {
   background: url('../assets/images/con_lamparita.jpeg') no-repeat center center fixed;
   background-size: cover;
   padding: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
-  background-color: rgba(255, 255, 255, 0.212);
+  background-color: rgba(255, 255, 255, 0.35); /* Fondo más opaco */
   border-radius: 10px;
-  padding: 12px;
-  width: 28%;
-  max-width: 280px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  margin-left: 20%;
-  margin-top: 30px;
-  backdrop-filter: blur(10px);
+  padding: 20px;
+  width: 40%;
+  min-width: 320px;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  margin: -10px 0 30px 130px; /* Cambio aquí: margen superior negativo para subir el formulario */
+  backdrop-filter: blur(15px); /* Aumentar el desenfoque */
 }
 
 h1 {
@@ -64,7 +66,8 @@ h2 {
   margin-bottom: 15px;
   color: #000;
   font-size: 1.5em;
-  font-weight: 600;
+  font-weight: 700; /* Más negrita */
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7); /* Sombra suave para mejor legibilidad */
 }
 
 .form-group {
@@ -81,14 +84,22 @@ label {
 .form-control {
   border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 5px;
-  margin-bottom: 6px;
-  font-size: 0.9em;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1em;
+  color: #000 !important;  /* Color de texto negro forzado */
+  background-color: rgba(255, 255, 255, 0.95);  /* Fondo más opaco */
+  font-weight: 500; /* Texto más definido */
+}
+
+.form-control::placeholder {
+  color: #666;
 }
 
 .form-control:focus {
   border-color: #80bdff;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  background-color: white;  /* Fondo blanco al enfocar */
 }
 
 .btn {
@@ -99,8 +110,8 @@ label {
 }
 
 .btn-primary {
-  background-color: #2d8a30;
-  border-color: #2d8a30;
+  background-color: #259129;
+  border-color: #481604;
   font-weight: 600;
 }
 
@@ -115,6 +126,10 @@ label {
   border: none; /* Sin bordes */
   text-decoration: none; /* Sin subrayado */
   transition: color 0.3s, background-color 0.3s; /* Transición suave */
+  font-size: 1.2em;  /* Aumentar tamaño de la fuente */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  font-weight: 500;  /* Un poco más grueso */
+  padding: 12px;     /* Más padding para mejor apariencia */
 }
 
 .btn-link:focus,
@@ -125,6 +140,28 @@ label {
   text-decoration: none; /* Sin subrayado en estos estados */
 }
 
+.btn-danger {
+  background-color: #da8f17; /* Cambio a un naranja suave (LightSalmon) */
+  border-color: hsl(15, 95%, 15%);
+  font-weight: 600;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.btn-danger:hover {
+  background-color: #ff8c66; /* Un tono más oscuro para el hover */
+  border-color: #ca4418;
+}
+
+.btn-primary, .btn-danger {
+  font-size: 1.2em;  /* Aumentar tamaño de la fuente */
+  font-weight: 700; /* Más negrita */
+  padding: 10px;    /* Ajustar el padding para acomodar el texto más grande */
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); /* Sombra suave para mejor legibilidad */
+  letter-spacing: 1.5px; /* Agregar espaciado entre letras */
+  text-transform: uppercase; /* Opcional: hacer el texto mayúsculas para mejor legibilidad */
+  font-family: Arial, sans-serif; /* Asegurar una fuente clara */
+}
 
 .alert {
   margin-bottom: 20px;

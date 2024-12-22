@@ -11,12 +11,10 @@
     <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
       <!-- Username -->
       <div class="form-group">
-        <label for="username">Username</label>
         <input type="text" 
-               id="username" 
-               formControlName="username" 
-               class="form-control"
-               (focus)="onFieldFocus('username')"
+               class="form-control" 
+               formControlName="username"
+               placeholder="Username"
                [ngClass]="{'is-invalid': registroForm.get('username')?.invalid && registroForm.get('username')?.touched}">
         <div class="invalid-feedback" *ngIf="registroForm.get('username')?.errors?.['required'] && registroForm.get('username')?.touched">
           Username es requerido
@@ -25,12 +23,10 @@
 
       <!-- Email -->
       <div class="form-group">
-        <label for="email">Email</label>
         <input type="email" 
-               id="email" 
-               formControlName="email" 
-               class="form-control"
-               (focus)="onFieldFocus('email')"
+               class="form-control" 
+               formControlName="email"
+               placeholder="Email"
                [ngClass]="{'is-invalid': registroForm.get('email')?.invalid && registroForm.get('email')?.touched}">
         <div class="invalid-feedback" *ngIf="registroForm.get('email')?.errors?.['required'] && registroForm.get('email')?.touched">
           Email es requerido
@@ -42,12 +38,10 @@
 
       <!-- Password -->
       <div class="form-group">
-        <label for="password">Password</label>
         <input type="password" 
-               id="password" 
-               formControlName="password" 
-               class="form-control"
-               (focus)="onFieldFocus('password')"
+               class="form-control" 
+               formControlName="password"
+               placeholder="Password"
                [ngClass]="{'is-invalid': registroForm.get('password')?.invalid && registroForm.get('password')?.touched}">
         <div class="invalid-feedback" *ngIf="registroForm.get('password')?.errors?.['required'] && registroForm.get('password')?.touched">
           Password es requerido
@@ -56,12 +50,10 @@
 
       <!-- DNI -->
       <div class="form-group">
-        <label for="dni">DNI</label>
-        <input type="number" 
-               id="dni" 
-               formControlName="dni" 
-               class="form-control"
-               (focus)="onFieldFocus('dni')"
+        <input type="text" 
+               class="form-control" 
+               formControlName="dni"
+               placeholder="DNI"
                [ngClass]="{'is-invalid': registroForm.get('dni')?.invalid && registroForm.get('dni')?.touched}">
         <div class="invalid-feedback" *ngIf="registroForm.get('dni')?.errors?.['required'] && registroForm.get('dni')?.touched">
           DNI es requerido
@@ -76,10 +68,15 @@
       </div>
       
       <div class="form-group">
+        <button type="button" class="btn btn-danger" (click)="cancelarRegistro()">
+          Cancelar
+        </button>
+      </div>
       
-      <button type="button" class="btn btn-link" routerLink="/login">
+      <div class="form-group">
+        <button type="button" class="btn btn-link" routerLink="/login">
           ¿Ya tienes cuenta? Inicia sesión
-      </button>
+        </button>
       </div>
     </form>
   </div>

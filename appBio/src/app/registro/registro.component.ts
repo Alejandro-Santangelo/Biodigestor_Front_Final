@@ -13,22 +13,34 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-  registroForm!: FormGroup;
+  registroForm: FormGroup;
   successMessage: string = '';
   errorMessage: string = '';
 
   constructor(
-    private formBuilder: FormBuilder,
+    private fb: FormBuilder,
     private router: Router,
     private http: HttpClient
-  ) {}
+  ) {
+    this.registroForm = this.fb.group({
+      username: ['', [Validators.required, Validators.minLength(4)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      dni: ['', [Validators.required, Validators.pattern('^[0-9]{8}$')]]
+    });
+
+    // Suscribirse a los cambios del formulario para debug
+    this.registroForm.valueChanges.subscribe(value => {
+      console.log('Form values:', value);
+    });
+  }
 
   ngOnInit(): void {
     this.initForm();
   }
 
   private initForm(): void {
-    this.registroForm = this.formBuilder.group({
+    this.registroForm = this.fb.group({
       username: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
@@ -50,6 +62,7 @@ export class RegistroComponent implements OnInit {
 
   onSubmit() {
     if (this.registroForm.valid) {
+      console.log('Form submitted:', this.registroForm.value);
       const userData = {
         username: this.registroForm.get('username')?.value,
         email: this.registroForm.get('email')?.value,
@@ -89,6 +102,11 @@ export class RegistroComponent implements OnInit {
         control.setValue(currentValue, { emitEvent: false });
       }
     }
+  }
+
+  cancelarRegistro(): void {
+    this.registroForm.reset();  // Limpiar el formulario
+    this.router.navigate(['']); // Redirigir a la página principal
   }
 
   private markFormGroupTouched(formGroup: FormGroup) {
