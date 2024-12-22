@@ -99,6 +99,10 @@ export const routes: Routes = [
     path: 'forum', 
     component: ForumComponent 
   },
+  { 
+    path: 'preguntas', 
+    component: PreguntasComponent 
+  },
   {   
     path: '**', 
     redirectTo: '' 

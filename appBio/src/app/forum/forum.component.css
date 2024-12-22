@@ -28,11 +28,26 @@ h1, h2, h3 {
 }
 
 .pregunta, .respuesta {
-  background-color: #f1f8e9;
+  background-color: z#f1f8e9;
   border: 1px solid #c8e6c9;
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+.pregunta h3 {
+    color: black !important;
+    font-weight: bold;
+}
+
+input.form-control[formControlName="titulo"] {
+    color: black;
+    font-weight: bold;
+}
+
+input.form-control[formControlName="titulo"]::placeholder {
+    color: #666;
+    font-weight: normal;
 }
 
 .form-control {
