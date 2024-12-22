@@ -14,6 +14,7 @@ import { UsuariosRegistradosComponent } from './components/usuarios-registrados/
 import { ForumComponent } from './forum/forum.component';
 import { RegistrosComponent } from './components/registros/registros.component';
 import { TesteoSensoresComponent } from './components/testeo-sensores/testeo-sensores.component';
+import { PreguntasComponent } from './preguntas/preguntas.component';  
 
 export const routes: Routes = [
   { 

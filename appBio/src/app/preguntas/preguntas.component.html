@@ -1,0 +1,7 @@
+<div *ngFor="let pregunta of preguntas">
+  <h3>{{ pregunta.titulo }}</h3>
+  <p>{{ pregunta.pregunta }}</p>
+  <div *ngFor="let respuesta of pregunta.respuestas">
+    <p>{{ respuesta }}</p>
+  </div>
+</div>

@@ -15,14 +15,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ApiEndpointsComponent } from './components/api-endpoints/api-endpoints.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ApiEndpointsComponent
-  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -38,8 +32,11 @@ import { ApiEndpointsComponent } from './components/api-endpoints/api-endpoints.
     MatIconModule,
     MatSnackBarModule,
     MatFormFieldModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  ]
 })
 export class AppModule { }
+
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+
+bootstrapApplication(AppComponent);
